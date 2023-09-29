@@ -7,7 +7,6 @@ import org.slf4j.Logger;
 
 @Import(stylesheet = "css/examples/olive.css")
 public class Annotations {
-
     @Property
     private String message;
 
@@ -21,10 +20,11 @@ public class Annotations {
     }
 
     @SetupRender
-    void beforeWeDoAnyRendering() {
-        message += "beforeWeDoAnyRendering() called...";
-        logger.info("beforeWeDoAnyRendering() called...");
+    void beforeAnyRendering() {
+        message += "beforeAnyRendering() called...";
+        logger.info("beforeAnyRendering() called...");
     }
+
 
     @CleanupRender
     void tidyUp() {

@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- We need a doctype to allow us to use special characters like &nbsp;
+     We use a "strict" DTD to make IE follow the alignment rules. -->
+
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd">
+
+<body class="container">
+    <h3>Total Control Output</h3>
+
+    BeanDisplay is very quick and easy, but limited. To have total control of the content, layout and
+    style, you can easily code up the template yourself.
+
+    <div class="eg">
+        <div class="row">
+            <div class="col-sm-2 lbl">Id:</div>
+            <div class="col-sm-4">${person.id}</div>
+            <div class="col-sm-2 lbl">Version:</div>
+            <div class="col-sm-4">${person.version}</div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2 lbl">Name:</div>
+            <div class="col-sm-10">${person.lastName}, ${person.firstName}</div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2 lbl">Region:</div>
+            <div class="col-sm-10">${regionName}</div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2 lbl">Start Date:</div>
+            <div class="col-sm-10"><t:output value="person.startDate" format="startDateFormat"/></div>
+        </div>
+    </div>
+
+    <p>4 new things:</p>
+    <ul>
+        <li>
+            <strong>Property expressions</strong>
+            Used in expansions and component parameters. For example, <code>person.id</code> is
+            equivalent to <code>getPerson().getId()</code>.
+        </li>
+        <li>
+            <code>Output</code>
+            A component for <em>formatting</em> output.
+        </li>
+        <li>
+            <code>@Inject</code>
+            A field annotation. We use it ask Tapestry to inject its Messages service at runtime.
+        </li>
+        <li>
+            <code>Messages</code>
+            A Tapestry service that provides access to properties files. We use it to convert the enum to a message. It looks
+            first for <em>TotalControlOutput.properties</em> and finds it.
+        </li>
+    </ul>
+
+    References:
+    <a href="http://getbootstrap.com/css/#grid">.row and .col-</a>,
+    <a href="http://tapestry.apache.org/component-templates.html#ComponentTemplates-Expansions">Expansions</a>,
+    <a href="http://tapestry.apache.org/property-expressions.html">Property Expressions</a>,
+    <a href="http://tapestry.apache.org/5.4/apidocs/org/apache/tapestry5/corelib/components/Output.html">Output component</a>,
+    <a href="http://tapestry.apache.org/5.4/apidocs/org/apache/tapestry5/ioc/annotations/Inject.html">@Inject</a>,
+    <a href="http://tapestry.apache.org/5.4/apidocs/org/apache/tapestry5/ioc/Messages.html">Messages</a>.<br/><br/>
+
+    <t:pagelink t:page="Index" href="#">Home</t:pagelink><br/><br/>
+
+    The source for IPersonFinderServiceLocal and @EJB is shown in the Session Beans and @EJB examples.<br/><br/>
+</body>
+</html>

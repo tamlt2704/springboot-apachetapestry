@@ -46,6 +46,8 @@
         message: "${message}".
     </div>
 
+    <t:pagelink page="Index">Home</t:pagelink><br/><br/>
+
     References:
     <a href="http://tapestry.apache.org/annotations.html">Annotations</a>,
     <a href="http://tapestry.apache.org/component-rendering.html#ComponentRendering-RenderingPhases">Rendering Phases</a>,
