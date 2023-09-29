@@ -1,6 +1,6 @@
 <html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd">
-<body style="margin: 10px;">
-    <t:pagelink page="Index">Refresh</t:pagelink><br/><br/>
+<body class="container">
+    <t:pagelink page="HelloWorld">Hello, World</t:pagelink><br/><br/>
 
     <t:pagelink page="styling/BootStrapStyling">BootStrap Styling</t:pagelink><br/><br/>
     <t:pagelink page="styling/StyleSheets">StyleSheets</t:pagelink><br/><br/>
@@ -19,5 +19,7 @@
     <t:pagelink t:page="navigation/moreparameters1">More Parameters</t:pagelink><br/><br/>
     <t:pagelink t:page="navigation/VariableParameters1">Variable Parameters</t:pagelink><br/><br/>
     <t:pagelink t:page="navigation/ActivationRequestParameters1">Activation Request Parameters</t:pagelink><br/><br/>
+
+    <t:pagelink t:page="examples/tables/Grid">Grid</t:pagelink><br/><br/>
 </body>
 </html>

@@ -34,7 +34,7 @@ public class App implements CommandLineRunner {
 
     private void initFakeUser() {
         Faker faker = new Faker();
-        int nbFakeUser = 10;
+        int nbFakeUser = 50;
         Regions[] regionValues = Regions.values();
         Random random = new Random();
 

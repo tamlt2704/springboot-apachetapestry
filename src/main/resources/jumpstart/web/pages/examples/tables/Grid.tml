@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- We need a doctype to allow us to use special characters like &nbsp;
+     We use a "strict" DTD to make IE follow the alignment rules. -->
+
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd">
+<body class="container">
+    <h3>Grid</h3>
+
+    Here is a table of Persons. It was built with the Grid component, using just one line of code in the template.
+
+    <div class="eg">
+        <t:grid source="persons" rowsPerPage="4" pagerPosition="top"/>
+    </div>
+
+    <p>Grid is great for rapid prototyping:</p>
+    <ul>
+        <li>Its parameters allow you to exclude columns, add columns, reorder columns, etc.</li>
+        <li>Its styling can be overridden with CSS.</li>
+        <li>Its editors can be overridden by property blocks. See also the Property Editors example.</li>
+        <li>Its bean model can be configured or overridden to include columns, exclude columns, add columns, and reorder columns.</li>
+        <li>Its sort model can be configured or overridden to control sorting.</li>
+        <li>Its data source can be configured or overridden to take control of caching and paginated retrieval of data.</li>
+    </ul>
+
+    <p>Naturally, Grid has limitations. The alternatives include:</p>
+    <ul>
+        <li>Use what Grid uses: the Loop component. See the Loop examples.</li>
+        <li>Build components, like Grid, that suit your needs. See the Component examples and the Tapestry source for Grid.</li>
+    </ul>
+
+    References:
+    <a href="http://tapestry.apache.org/5.4/apidocs/org/apache/tapestry5/corelib/components/Grid.html">Grid</a>.<br/><br/>
+
+    <t:pagelink page="Index">Home</t:pagelink><br/><br/>
+
+    The source for IPersonFinderServiceLocal and @EJB is shown in the Session Beans and @EJB examples.<br/><br/>
+</body>
+</html>
