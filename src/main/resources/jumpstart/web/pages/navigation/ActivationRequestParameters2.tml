@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- We need a doctype to allow us to use special characters like &nbsp;
+     We use a "strict" DTD to make IE follow the alignment rules. -->
+
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd">
+<body class="container">
+    <h3>Activation Request Parameters (2)</h3>
+
+    <div class="eg">
+        <p>You requested persons whose name is like "<em>${partialName}</em>".</p>
+        <t:pagelink t:page="navigation/ActivationRequestParameters1">Return</t:pagelink>
+    </div>
+
+    Look at the URL of this page.
+    It is the page render request from the PageLink, and the <strong>activation request parameters</strong> are at the end.<br/><br/>
+
+    This page receives the activation request parameter(s) by providing annotated field(s):<br/><br/>
+
+    <pre><code>
+    @ActivationRequestParameter
+    private String partialName;
+    </code></pre><br/>
+
+    <strong>When to use activation request parameters instead of activation context?</strong><br/>
+    Activation request parameters are good for <strong>filter criteria</strong> because, arguably,
+    they produce a more RESTful URL in that situation.<br/><br/>
+
+    A page render request can have an activation context AND activation request parameters at the same time.<br/><br/>
+
+    References:
+    <a href="http://tapestry.apache.org/5.4/apidocs/org/apache/tapestry5/corelib/components/PageLink.html">PageLink</a>,
+    <a href="http://tapestry.apache.org/page-navigation.html#PageNavigation-PageRenderRequests">Page Render Requests</a>,
+    <a href="http://tapestry.apache.org/page-navigation.html#PageNavigation-Pageactivation">Page Activation</a>,
+    <a href="http://blpsilva.wordpress.com/2008/04/05/query-strings-in-restful-web-services/">Query strings in RESTful Web Services</a>,
+    <a href="http://tapestry.apache.org/5.4/apidocs/org/apache/tapestry5/annotations/ActivationRequestParameter.html">@ActivationRequestParameter</a>.<br/><br/>
+
+    <t:pagelink t:page="Index">Home</t:pagelink><br/><br/>
+</body>
+</html>

@@ -18,5 +18,7 @@
 
     <t:pagelink t:page="navigation/pagelinks1">Pagelinks</t:pagelink><br/><br/>
     <t:pagelink t:page="navigation/activationcontext1">Activation Context</t:pagelink><br/><br/>
+    <t:pagelink t:page="navigation/moreparameters1">More Parameters</t:pagelink><br/><br/>
+    <t:pagelink t:page="navigation/ActivationRequestParameters1">Activation Request Parameters</t:pagelink><br/><br/>
 </body>
 </html>
