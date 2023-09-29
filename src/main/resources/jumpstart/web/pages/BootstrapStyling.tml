@@ -1,0 +1,20 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- We need a doctype to allow us to use special characters like &nbsp;
+     We use a "strict" DTD to make IE follow the alignment rules. -->
+
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd">
+
+<body class="container">
+    <h3>Bootstrap Styling</h3>
+
+    <p>
+    By default, Tapestry pages automatically include the <a href="http://getbootstrap.com/">Bootstrap 3</a> CSS stylesheets.
+    </p>
+    <p>
+    This page uses Bootstrap's <code>container</code> CSS class to centre the page's contents.
+    </p>
+    <p>
+    As we will see later, you can override these styles, or turn off Bootstrap altogether.
+    </p>
+</body>
+</html>

@@ -1,0 +1,35 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- We need a doctype to allow us to use special characters like &nbsp;
+     We use a "strict" DTD to make IE follow the alignment rules. -->
+
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd">
+<body class="container">
+    <h3>Activation Context (2)</h3>
+
+    <div class="eg">
+        <p>You requested Person <em>${personId}</em>.</p>
+        <t:beandisplay object="person"/>
+        <t:pagelink t:page="ActivationContext1">Return</t:pagelink>
+    </div>
+
+
+    Look at the URL of this page.
+    It is the page render request from the PageLink, and the <strong>activation context</strong> is at the end.<br/><br/>
+
+    This page handles the <em>activate</em> event like this:<br/><br/>
+
+    <pre><code>
+    void onActivate(Long personId) {
+        this.personId = personId;
+    }
+    </code></pre><br/>
+
+    The method receives the activation context into <code>personId</code>.<br/><br/>
+
+    References:
+    <a href="http://tapestry.apache.org/5.4/apidocs/org/apache/tapestry5/corelib/components/PageLink.html">PageLink</a>,
+    <a href="http://tapestry.apache.org/page-navigation.html#PageNavigation-PageRenderRequests">Page Render Requests</a>,
+    <a href="http://tapestry.apache.org/page-navigation.html#PageNavigation-Pageactivation">Page Activation</a>.<br/><br/>
+</body>
+</html>

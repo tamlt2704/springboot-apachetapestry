@@ -1,4 +1,4 @@
-package app.web.pages;
+package jumpstart.web.pages;
 
 public class HelloWorld {
     /** An ordinary getter. */

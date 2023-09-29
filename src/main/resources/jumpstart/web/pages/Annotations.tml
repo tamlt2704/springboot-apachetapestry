@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- We need a doctype to allow us to use special characters like &nbsp;
+     We use a "strict" DTD to make IE follow the alignment rules. -->
+
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd">
+<body class="container">
+    <h3>Annotations</h3>
+
+    Tapestry doesn't just look for particular method names, it also looks for particular method annotations. Here are some for phases:<br/><br/>
+
+    <ul>
+        <li>
+            <code>@OnEvent(value = EventConstants.ACTIVATE)</code>
+            You can put this annotation on a method instead of naming the method <em>onActivate</em>.
+        </li>
+        <li>
+            <code>@SetupRender</code>
+            You can put this annotation on a method instead of naming the method <em>setupRender</em>.
+        </li>
+        <li>
+            <code>@CleanupRender</code>
+            You can put this annotation on a method instead of naming the method <em>cleanupRender</em>.
+        </li>
+    </ul>
+
+    Here are some other useful annotations:<br/><br/>
+
+    <ul>
+        <li>
+            <code>@Property</code>
+            A field annotation. Tapestry will invisibly provide a getter and setter for the field. You can make the property
+            read-only or write-only - see <a
+                href="http://tapestry.apache.org/5.4/apidocs/org/apache/tapestry5/annotations/Property.html">@Property</a>.
+        </li>
+
+        <li>
+            <code>@Log</code>
+            A method annotation. Tapestry will write to the log, at DEBUG level, as it enters and exits the method. Tapestry will
+            also log the parameter values and the method's return value.<br />
+        </li>
+    </ul>
+
+    Here is a demonstration:<br/>
+
+    <div class="eg">
+        message: "${message}".
+    </div>
+
+    References:
+    <a href="http://tapestry.apache.org/annotations.html">Annotations</a>,
+    <a href="http://tapestry.apache.org/component-rendering.html#ComponentRendering-RenderingPhases">Rendering Phases</a>,
+    <a href="http://tapestry.apache.org/component-rendering.html#ComponentRendering-SetupRender">SetupRender</a>,
+    <a href="http://tapestry.apache.org/component-rendering.html#ComponentRendering-CleanupRender">CleanupRender</a>,
+    <a href="http://tapestry.apache.org/5.4/apidocs/org/apache/tapestry5/annotations/Property.html">@Property</a>,
+    <a href="http://tapestry.apache.org/logging.html">Logging</a>.<br/><br/>
+</body>
+</html>

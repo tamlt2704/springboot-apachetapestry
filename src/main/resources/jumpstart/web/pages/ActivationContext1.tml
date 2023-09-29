@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- We need a doctype to allow us to use special characters like &nbsp;
+     We use a "strict" DTD to make IE follow the alignment rules. -->
+
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd">
+<body class="container">
+    <h3>Activation Context (1)</h3>
+
+    A <strong>page render request</strong> activates a page.
+    A page render request can include parameters, which Tapestry calls the <strong>activation context</strong>.<br/><br/>
+
+    To specify an activation context in a PageLink, use the <code>context</code> parameter.
+    Here we have specified <code>context="personId"</code>:
+
+    <div class="eg">
+        <t:pagelink page="ActivationContext2" context="personId">Show Person ${personId}</t:pagelink><br/>
+    </div>
+
+    Click the link above to learn more.<br/><br/>
+
+    References:
+    <a href="http://tapestry.apache.org/5.4/apidocs/org/apache/tapestry5/corelib/components/PageLink.html">PageLink</a>,
+    <a href="http://tapestry.apache.org/page-navigation.html#PageNavigation-PageRenderRequests">Page Render Requests</a>,
+    <a href="http://tapestry.apache.org/page-navigation.html#PageNavigation-Pageactivation">Page Activation</a>,
+    <a href="http://tapestry.apache.org/property-expressions.html#PropertyExpressions-Grammar">Grammar</a>,
+    <a href="http://tapestry.apache.org/component-parameters.html#ComponentParameters-BindingExpressions">Binding Expressions</a>.<br/><br/>
+</body>
+</html>

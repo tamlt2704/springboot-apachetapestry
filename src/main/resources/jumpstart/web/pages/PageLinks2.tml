@@ -1,0 +1,22 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- We need a doctype to allow us to use special characters like &nbsp;
+     We use a "strict" DTD to make IE follow the alignment rules. -->
+
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd">
+<body class="container">
+    <h3>Page Links (2)</h3>
+
+    Look at the URL of this page. It is the <strong>page render request</strong> from the PageLink.<br/><br/>
+
+    When Tapestry receives a page render request, it gets an instance of the page, activates it,
+    <em>renders it</em> to HTML, then streams the HTML back to the client.<br/><br/>
+
+    References:
+    <a href="http://tapestry.apache.org/5.4/apidocs/org/apache/tapestry5/corelib/components/PageLink.html">PageLink</a>,
+    <a href="http://tapestry.apache.org/page-navigation.html">Page Navigation</a>,
+    <a href="http://tapestry.apache.org/page-navigation.html#PageNavigation-PageRenderRequests">Page Render Requests</a>,
+    <a href="http://tapestry.apache.org/component-rendering.html">Component Rendering</a>.<br/><br/>
+
+    <t:pagelink t:page="PageLinks1">Return</t:pagelink><br/><br/>
+</body>
+</html>
