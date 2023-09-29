@@ -1,4 +1,4 @@
-package jumpstart.web.pages;
+package jumpstart.web.pages.navigation;
 
 import jumpstart.entity.Person;
 import jumpstart.repository.PersonRepository;

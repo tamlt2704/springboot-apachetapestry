@@ -3,14 +3,20 @@
     <h3>Hello, ${username}</h3>
 
     <t:pagelink page="Index">Refresh</t:pagelink><br/><br/>
-    <t:pagelink page="StyleSheets">StyleSheets</t:pagelink><br/><br/>
-    <t:pagelink page="Less">Less</t:pagelink><br/><br/>
-    <t:pagelink page="Output">Output</t:pagelink><br/><br/>
-    <t:pagelink t:page="BetterOutput">BetterOutput</t:pagelink><br/><br/>
-    <t:pagelink t:page="EasyOutput">EasyOutput(Using BeanDisplay)</t:pagelink><br/><br/>
-    <t:pagelink t:page="EasyOutputEntityBean">EasyOutput(Entity Bean)</t:pagelink><br/><br/>
-    <t:pagelink t:page="TotalControlOutput">TotalControlOutput</t:pagelink><br/><br/>
-    <t:pagelink t:page="Methods">Methods</t:pagelink><br/><br/>
-    <t:pagelink t:page="Annotations">Annotations</t:pagelink><br/><br/>
+
+    <t:pagelink page="styling/BootStrapStyling">BootStrap Styling</t:pagelink><br/><br/>
+    <t:pagelink page="styling/StyleSheets">StyleSheets</t:pagelink><br/><br/>
+    <t:pagelink page="styling/Less">Less</t:pagelink><br/><br/>
+
+    <t:pagelink page="output/Output">Output</t:pagelink><br/><br/>
+    <t:pagelink t:page="output/BetterOutput">BetterOutput</t:pagelink><br/><br/>
+    <t:pagelink t:page="output/EasyOutput">EasyOutput(Using BeanDisplay)</t:pagelink><br/><br/>
+    <t:pagelink t:page="output/EasyOutputEntityBean">EasyOutput(Entity Bean)</t:pagelink><br/><br/>
+    <t:pagelink t:page="output/TotalControlOutput">TotalControlOutput</t:pagelink><br/><br/>
+    <t:pagelink t:page="output/Methods">Methods</t:pagelink><br/><br/>
+    <t:pagelink t:page="output/Annotations">Annotations</t:pagelink><br/><br/>
+
+    <t:pagelink t:page="navigation/pagelinks1">Pagelinks</t:pagelink><br/><br/>
+    <t:pagelink t:page="navigation/activationcontext1">Activation Context</t:pagelink><br/><br/>
 </body>
 </html>

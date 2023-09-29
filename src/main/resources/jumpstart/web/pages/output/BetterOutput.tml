@@ -14,7 +14,7 @@
 
     <div class="eg">
         <p>${message}</p>
-        <t:pagelink t:page="BetterOutput" href="#">Refresh</t:pagelink>
+        <t:pagelink t:page="output/BetterOutput" href="#">Refresh</t:pagelink>
     </div>
 
     References:

@@ -1,4 +1,4 @@
-package jumpstart.web.pages;
+package jumpstart.web.pages.styling;
 
 import org.apache.tapestry5.annotations.Import;
 

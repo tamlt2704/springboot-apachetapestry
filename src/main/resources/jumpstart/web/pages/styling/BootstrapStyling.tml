@@ -16,5 +16,7 @@
     <p>
     As we will see later, you can override these styles, or turn off Bootstrap altogether.
     </p>
+
+    <t:pagelink t:page="Index" href="#">Home</t:pagelink><br/><br/>
 </body>
 </html>

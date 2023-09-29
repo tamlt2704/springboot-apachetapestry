@@ -62,7 +62,5 @@
     <a href="http://tapestry.apache.org/5.4/apidocs/org/apache/tapestry5/ioc/Messages.html">Messages</a>.<br/><br/>
 
     <t:pagelink t:page="Index" href="#">Home</t:pagelink><br/><br/>
-
-    The source for IPersonFinderServiceLocal and @EJB is shown in the Session Beans and @EJB examples.<br/><br/>
 </body>
 </html>
