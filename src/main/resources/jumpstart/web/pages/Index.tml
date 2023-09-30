@@ -21,5 +21,8 @@
     <t:pagelink t:page="navigation/ActivationRequestParameters1">Activation Request Parameters</t:pagelink><br/><br/>
 
     <t:pagelink t:page="examples/tables/Grid">Grid</t:pagelink><br/><br/>
+    <t:pagelink t:page="examples/tables/StyledGrid">Styled Grid</t:pagelink><br/><br/>
+    <t:pagelink t:page="examples/tables/SortedGrid">Sorted Grid</t:pagelink><br/><br/>
+    <t:pagelink t:page="examples/tables/LinkingGrid1">Linking Grid</t:pagelink><br/><br/>
 </body>
 </html>

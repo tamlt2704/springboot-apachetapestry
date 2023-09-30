@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- We need a doctype to allow us to use special characters like &nbsp;
+     We use a "strict" DTD to make IE follow the alignment rules. -->
+
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd" xmlns:p="tapestry:parameter">
+<body class="container">
+    <h3>Linking Grid (1)</h3>
+
+    A table built with the Grid component, with links.
+
+    <div class="eg">
+        <t:grid source="persons" row="person" exclude="version" rowsPerPage="4" pagerPosition="top">
+            <p:firstNameCell>
+                <t:pagelink page="examples/tables/LinkingGrid2" context="person.firstName">${person.firstName}</t:pagelink>
+            </p:firstNameCell>
+        </t:grid>
+    </div>
+
+    References:
+    <a href="http://tapestry.apache.org/5.4/apidocs/org/apache/tapestry5/corelib/components/Grid.html">Grid</a>.<br/><br/>
+
+    <t:pagelink page="Index">Home</t:pagelink><br/><br/>
+
+    The source for IPersonFinderServiceLocal and @EJB is shown in the Session Beans and @EJB examples.<br/><br/>
+</body>
+</html>
