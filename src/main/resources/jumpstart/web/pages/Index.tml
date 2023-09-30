@@ -24,5 +24,7 @@
     <t:pagelink t:page="examples/tables/StyledGrid">Styled Grid</t:pagelink><br/><br/>
     <t:pagelink t:page="examples/tables/SortedGrid">Sorted Grid</t:pagelink><br/><br/>
     <t:pagelink t:page="examples/tables/LinkingGrid1">Linking Grid</t:pagelink><br/><br/>
+    <t:pagelink t:page="examples/tables/StyledLoop">Styled Loop</t:pagelink><br/><br/>
+    <t:pagelink t:page="examples/tables/LinkingLoop1">Linking Loop</t:pagelink><br/><br/>
 </body>
 </html>
