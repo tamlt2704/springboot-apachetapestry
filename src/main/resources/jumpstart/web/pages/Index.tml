@@ -41,6 +41,8 @@
                    <t:pagelink t:page="examples/tables/LinkingGrid1">Linking Grid</t:pagelink><br/>
                    <t:pagelink t:page="examples/tables/StyledLoop">Styled Loop</t:pagelink><br/>
                    <t:pagelink t:page="examples/tables/LinkingLoop1">Linking Loop</t:pagelink><br/>
+                   <t:pagelink t:page="examples/tables/addandremovecolumns1">Add And Remove Columns</t:pagelink><br/>
+                   <t:pagelink t:page="examples/tables/gridbeanmodel1">Grid BeanModel</t:pagelink><br/>
                    <br/>
                    <t:pagelink t:page="examples/tables/StyledLoop">Styled Loop</t:pagelink><br/><br/>
                    <t:pagelink t:page="examples/tables/LinkingLoop1">Linking Loop</t:pagelink><br/>
