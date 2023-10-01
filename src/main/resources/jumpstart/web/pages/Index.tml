@@ -1,30 +1,71 @@
 <html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd">
 <body class="container">
-    <t:pagelink page="HelloWorld">Hello, World</t:pagelink><br/><br/>
+    <div class="group"> Credit: https://tapestry-jumpstart.org/jumpstart </div>
 
-    <t:pagelink page="styling/BootStrapStyling">BootStrap Styling</t:pagelink><br/><br/>
-    <t:pagelink page="styling/StyleSheets">StyleSheets</t:pagelink><br/><br/>
-    <t:pagelink page="styling/Less">Less</t:pagelink><br/><br/>
+    <table class="table">
+        <tr>
+            <td>
+                <div class="category"> OUTPUT </div>
+                <div class="group">
+                    <t:pagelink page="HelloWorld">Hello, World</t:pagelink><br/>
+                </div>
 
-    <t:pagelink page="output/Output">Output</t:pagelink><br/><br/>
-    <t:pagelink t:page="output/BetterOutput">BetterOutput</t:pagelink><br/><br/>
-    <t:pagelink t:page="output/EasyOutput">EasyOutput(Using BeanDisplay)</t:pagelink><br/><br/>
-    <t:pagelink t:page="output/EasyOutputEntityBean">EasyOutput(Entity Bean)</t:pagelink><br/><br/>
-    <t:pagelink t:page="output/TotalControlOutput">TotalControlOutput</t:pagelink><br/><br/>
-    <t:pagelink t:page="output/Methods">Methods</t:pagelink><br/><br/>
-    <t:pagelink t:page="output/Annotations">Annotations</t:pagelink><br/><br/>
+                <div class="group">
+                    <t:pagelink page="styling/BootStrapStyling">BootStrap Styling</t:pagelink><br/>
+                    <t:pagelink page="styling/StyleSheets">StyleSheets</t:pagelink><br/>
+                    <t:pagelink page="styling/Less">Less</t:pagelink><br/>
+                </div>
 
-    <t:pagelink t:page="navigation/pagelinks1">Pagelinks</t:pagelink><br/><br/>
-    <t:pagelink t:page="navigation/activationcontext1">Activation Context</t:pagelink><br/><br/>
-    <t:pagelink t:page="navigation/moreparameters1">More Parameters</t:pagelink><br/><br/>
-    <t:pagelink t:page="navigation/VariableParameters1">Variable Parameters</t:pagelink><br/><br/>
-    <t:pagelink t:page="navigation/ActivationRequestParameters1">Activation Request Parameters</t:pagelink><br/><br/>
+                <div class="group">
+                    <t:pagelink page="output/Output">Output</t:pagelink><br/>
+                    <t:pagelink t:page="output/BetterOutput">BetterOutput</t:pagelink><br/>
+                    <t:pagelink t:page="output/EasyOutput">EasyOutput(Using BeanDisplay)</t:pagelink><br/>
+                    <t:pagelink t:page="output/EasyOutputEntityBean">EasyOutput(Entity Bean)</t:pagelink><br/>
+                    <t:pagelink t:page="output/TotalControlOutput">TotalControlOutput</t:pagelink><br/>
+                    <t:pagelink t:page="output/Methods">Methods</t:pagelink><br/><br/>
+                    <t:pagelink t:page="output/Annotations">Annotations</t:pagelink><br/>
+                </div>
 
-    <t:pagelink t:page="examples/tables/Grid">Grid</t:pagelink><br/><br/>
-    <t:pagelink t:page="examples/tables/StyledGrid">Styled Grid</t:pagelink><br/><br/>
-    <t:pagelink t:page="examples/tables/SortedGrid">Sorted Grid</t:pagelink><br/><br/>
-    <t:pagelink t:page="examples/tables/LinkingGrid1">Linking Grid</t:pagelink><br/><br/>
-    <t:pagelink t:page="examples/tables/StyledLoop">Styled Loop</t:pagelink><br/><br/>
-    <t:pagelink t:page="examples/tables/LinkingLoop1">Linking Loop</t:pagelink><br/><br/>
+                <div class="group">
+                    <t:pagelink t:page="navigation/pagelinks1">Pagelinks</t:pagelink><br/><br/>
+                    <t:pagelink t:page="navigation/activationcontext1">Activation Context</t:pagelink><br/>
+                    <t:pagelink t:page="navigation/moreparameters1">More Parameters</t:pagelink><br/>
+                    <t:pagelink t:page="navigation/VariableParameters1">Variable Parameters</t:pagelink><br/><br/>
+                    <t:pagelink t:page="navigation/ActivationRequestParameters1">Activation Request Parameters</t:pagelink><br/>
+                </div>
+
+                <div class="group">
+                   <t:pagelink t:page="examples/tables/Grid">Grid</t:pagelink><br/>
+                   <t:pagelink t:page="examples/tables/StyledGrid">Styled Grid</t:pagelink><br/>
+                   <t:pagelink t:page="examples/tables/SortedGrid">Sorted Grid</t:pagelink><br/>
+                   <t:pagelink t:page="examples/tables/LinkingGrid1">Linking Grid</t:pagelink><br/>
+                   <t:pagelink t:page="examples/tables/StyledLoop">Styled Loop</t:pagelink><br/>
+                   <t:pagelink t:page="examples/tables/LinkingLoop1">Linking Loop</t:pagelink><br/>
+                   <br/>
+                   <t:pagelink t:page="examples/tables/StyledLoop">Styled Loop</t:pagelink><br/><br/>
+                   <t:pagelink t:page="examples/tables/LinkingLoop1">Linking Loop</t:pagelink><br/>
+                </div>
+            </td>
+
+            <td>
+                <div class="category"> INPUT </div>
+            </td>
+
+            <td>
+                <div class="group">
+
+                </div>
+            </td>
+
+            <td>
+                <div class="category"> COMPONENTS, MIXIS, JS </div>
+            </td>
+
+            <td>
+                <div class="category"> TECHNIQUES </div>
+            </td>
+
+        </tr>
+    </table>
 </body>
 </html>
