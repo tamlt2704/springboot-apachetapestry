@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- We need a doctype to allow us to use special characters like &nbsp;
+     We use a "strict" DTD to make IE follow the alignment rules. -->
+
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd">
+<body class="container">
+    <h3>Return Types (1)</h3>
+
+    Event handler methods control what is displayed next by what they return. <br/>
+    The following EventLinks demonstrate all of the return types that Tapestry allows:
+    <div class="eg">
+        <t:eventlink event="returnvoid">void</t:eventlink> - redisplay the same page.<br/>
+        <t:eventlink event="returnnull">null</t:eventlink> - redisplay the same page.<br/>
+        <t:eventlink event="returnfalse">false</t:eventlink> - redisplay the same page.<br/>
+        <t:eventlink event="returntrue">true</t:eventlink> - redisplay same page, aborting event bubbling (see Event Bubbling example).<br/>
+        <t:eventlink event="returnstring">String (must be a logical page name)</t:eventlink> - go to new page.<br/>
+        <t:eventlink event="returnclass">Class (must be a page class)</t:eventlink> - go to new page.<br/>
+        <t:eventlink event="returnpageinstance">page instance</t:eventlink> - go to new page. The page may have been configured (by calling its methods).<br/>
+        <t:eventlink event="returnlink">Link</t:eventlink> - go to new page. The link may include a context.<br/>
+        <t:eventlink event="returnstreamresponse">StreamResponse</t:eventlink> - used by pages or components to return images, PDFs, XML, etc.
+            See also the Web Services example.<br/>
+        <t:eventlink event="returnurl">URL</t:eventlink> - go to a java.net.URL of an external page.<br/>
+        <t:eventlink event="returnhttperror">HttpError</t:eventlink> - returns an
+            <a href="http://en.wikipedia.org/wiki/List_of_HTTP_status_codes">HTTP status code</a>.<br/>
+
+        <t:if t:test="message">
+            <br/>
+            <div class="alert alert-info">
+                ${message}
+            </div>
+        </t:if>
+    </div>
+
+    References:
+    <a href="http://tapestry.apache.org/page-navigation.html#PageNavigation-ComponentEventRequests&amp;Responses">Component Event Requests</a>,
+    <a href="http://tapestry.apache.org/current/apidocs/org/apache/tapestry5/services/HttpError.html">HttpError</a>,
+    <a href="http://tapestry.apache.org/5.4/apidocs/org/apache/tapestry5/Link.html">Link</a>,
+    <a href="http://tapestry.apache.org/5.4/apidocs/org/apache/tapestry5/ComponentResources.html">ComponentResources</a>,
+    <a href="http://tapestry.apache.org/5.4/apidocs/org/apache/tapestry5/StreamResponse.html">StreamResponse</a>,
+    the Streaming Data section of <a href="http://wiki.apache.org/tapestry/Tapestry5HowTos#Streaming_Data">Tapestry 5 How Tos</a>,
+    <a href="http://tapestry.apache.org/5.4/apidocs/org/apache/tapestry5/corelib/components/If.html">If</a>.<br/><br/>
+
+    <t:pagelink page="Index">Home</t:pagelink><br/><br/>
+</body>
+</html>

@@ -78,6 +78,15 @@
                 <div class="group">
                     <t:pagelink t:page="examples/state/StoringDataInAPage">Storing Data In A Page</t:pagelink><br/>
                 </div>
+
+                <div class="group">
+                    <t:pagelink t:page="examples/component/CoreInputComponents">Core Input Components</t:pagelink><br/>
+                    <t:pagelink t:page="examples/component/Html5InputTypes">Html5 Input Types</t:pagelink><br/>
+                </div>
+
+                <div class="group">
+                    <t:pagelink t:page="examples/navigation/ReturnTypes1">Return Types</t:pagelink><br/>
+                </div>
             </td>
 
             <td>
