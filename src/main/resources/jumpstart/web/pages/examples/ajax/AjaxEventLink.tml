@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- We need a doctype to allow us to use special characters like &nbsp;
+     We use a "strict" DTD to make IE follow the alignment rules. -->
+
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd">
+<body class="container">
+    <h3>AJAX EventLink</h3>
+
+    <noscript class="js-required">
+        ${message:javascript_required}
+    </noscript>
+
+    This page demonstrates how easily <a href="http://en.wikipedia.org/wiki/AJAX">AJAX</a> behaviour can be given to an EventLink,
+    without writing any JavaScript.<br/><br/>
+
+    In the following example, if you click on the first link then the whole page is refreshed, but if you
+    click on the second link - the AJAX-enabled link - then only serverTime2 is refreshed.
+
+    <div class="eg">
+        <t:eventlink event="refreshPage">Refresh whole page</t:eventlink> - this EventLink is not AJAX-enabled<br/>
+        <t:eventlink event="refreshZone" async="true">Refresh Server Time 2</t:eventlink> - this EventLink is AJAX-enabled<br/><br/>
+
+        Server Time 1:  ${serverTime1}
+        <t:zone t:id="time2Zone" id="time2Zone">
+            Server Time 2:  ${serverTime2}
+        </t:zone>
+    </div>
+
+    We gave AJAX behaviour to the second link by specifying <code>async="true"</code> on it, putting a Zone component around serverTime2,
+    and in the event handler method we ask the AjaxResponseRenderer service to render that Zone.<br/><br/>
+
+    <strong>Without zone</strong> specified on the first EventLink, clicking it results in <strong>Get/Redirect/Get</strong>.<br/>
+    The event handler returns a "redirect" to the <em>page to render</em>.  This involves 2 round trips to the server.<br/><br/>
+
+    <strong>With zone</strong> specified on the second EventLink, clicking it results in <strong>Post/Partial-Response</strong>. <br/>
+    The event handler returns a <em>component or block to update</em>.  This involves only 1 round trip to the server.<br/><br/>
+
+    References:
+    <a href="http://tapestry.apache.org/5.4/apidocs/org/apache/tapestry5/corelib/components/EventLink.html">EventLink</a>,
+    <a href="http://tapestry.apache.org/ajax-and-zones.html">Ajax and Zones</a>,
+    <a href="http://tapestry.apache.org/5.4/apidocs/org/apache/tapestry5/corelib/components/Zone.html">Zone</a>,
+    <a href="http://tapestry.apache.org/5.4/apidocs/org/apache/tapestry5/services/ajax/AjaxResponseRenderer.html">AjaxResponseRenderer</a>,
+    <a href="http://tapestry.apache.org/5.4/apidocs/org/apache/tapestry5/services/Request.html">Request</a>,
+    <a href="http://tapestry.apache.org/5.4/apidocs/org/apache/tapestry5/ioc/annotations/Inject.html">@Inject</a>,
+    <a href="http://tapestry.apache.org/5.4/apidocs/org/apache/tapestry5/annotations/InjectComponent.html">@InjectComponent</a>,
+    <a href="http://tapestry.apache.org/5.4/coffeescript/zone.html">t5/core/zone</a>,
+    <a href="http://tapestry.apache.org/5.4/coffeescript/ajax.html">t5/core/ajax</a>.<br/><br/>
+
+    Some statistics: for this page the AJAX traffic is less than 100 bytes, whereas the non-AJAX traffic is over 10,000 bytes.
+    The AJAX link generates 1 POST whereas the non-AJAX generates 2 GETs (which is normal for EventLink).<br/><br/>
+
+    <t:pagelink page="Index">Home</t:pagelink><br/><br/>
+</body>
+</html>

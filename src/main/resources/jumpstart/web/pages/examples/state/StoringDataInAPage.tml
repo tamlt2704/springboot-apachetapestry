@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- We need a doctype to allow us to use special characters like &nbsp;
+     We use a "strict" DTD to make IE follow the alignment rules. -->
+
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd">
+<body class="container">
+    <h3>Storing Data in a Page</h3>
+
+    Sometimes there are fields in a page that you want the page to store for use next time you access the page.<br/>
+    To do this, annotate those fields with <code>@Persist</code>.<br/><br/>
+
+    In this example we use @Persist on a field called <em>count</em>. We increment <em>count</em> every time the page is rendered.<br/>
+    If you revisit this page or reload it, you will see that <em>count</em> has been remembered and incremented.
+
+    <div class="eg">
+        The number of times you have visited this page during this session: <strong>${count}</strong>
+    </div>
+
+    The default <em>strategy</em> for @Persist is "session", which means store the field's value server-side in your web session.
+    Alternative strategies for @Persist include "flash" and "client" - see
+    <a href="http://tapestry.apache.org/persistent-page-data.html">Persistent Page Data</a>. <br/><br/>
+
+    To remove a session-persisted field from the session, set it to null, or call ComponentResources'
+    <code>discardPersistentFieldChanges()</code> method as demonstrated by this link:
+
+    <div class="eg">
+        <a t:type="eventlink" t:event="clear" href="#">Remove count from the Session and go Home</a>.
+    </div>
+
+    To see what's currently stored in your session, see the Display Session Contents example.<br/><br/>
+
+    <p><strong>Caution</strong></p>
+    <ul>
+        <li>The "session" strategy is risky because many browsers share the same session across windows and tabs.
+            The danger is that the field will be overwritten if the user opens a new window or tab and visits the same page.
+            We address this issue in the Wizard examples by creating a "conversation".</li>
+        <li>"Session" persistence also has an impact on clustered servers.  Howard discusses this in
+            <a href="http://thread.gmane.org/gmane.comp.java.tapestry.user/65410/focus=65426">Tapestry App Replication</a>
+            (note that <em>@ApplicationState</em> is the old name for <em>@SessionState</em>)
+            and the documentation discusses it in
+            <a href="http://tapestry.apache.org/persistent-page-data.html#PersistentPageData-ClusteringIssues">Clustering Issues</a>.</li>
+    </ul>
+
+    You can add your own persistence strategy: see
+    <a href="http://wiki.apache.org/tapestry/Tapestry5HowToUsePersistentFieldStrategy">How To Use Persistent Field Strategy</a>.<br/><br/>
+
+    References: <a href="http://tapestry.apache.org/persistent-page-data.html">Persistent Page Data</a>,
+    <a href="http://tapestry.apache.org/5.4/apidocs/org/apache/tapestry5/annotations/Persist.html">@Persist</a>,
+    <a href="http://tapestry.apache.org/5.4/apidocs/org/apache/tapestry5/PersistenceConstants.html">PersistenceConstants</a>,
+    <a href="http://tapestry.apache.org/persistent-page-data.html#PersistentPageData-ClusteringIssues">Clustering Issues</a>,
+    <a href="http://wiki.apache.org/tapestry/Tapestry5HowToUsePersistentFieldStrategy">How To Use Persistent Field Strategy</a>.<br/><br/>
+
+    <t:pagelink page="Index">Home</t:pagelink><br/><br/>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- We need a doctype to allow us to use special characters like &nbsp;
+     We use a "strict" DTD to make IE follow the alignment rules. -->
+
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd">
+<body class="container">
+    <h3>Event Links</h3>
+
+    EventLink renders a link that sends an event name and parameters in the URL when it is clicked.<br/><br/>
+
+    Here are 3 EventLinks. The first two send event <em>add</em>, and the third one sends event <em>clear</em>.
+    It is explained in the next example.<br/>
+
+    <div class="eg">
+        <div class="alert alert-info">
+            Count = ${count}.
+        </div>
+
+        <t:eventlink t:event="add" t:context="literal:1">Add 1</t:eventlink><br/>
+        <t:eventlink t:event="add" t:context="literal:2">Add 2</t:eventlink><br/>
+        <t:eventlink t:event="clear">Clear</t:eventlink>
+    </div>
+
+    References:
+    <a href="http://tapestry.apache.org/5.4/apidocs/org/apache/tapestry5/corelib/components/EventLink.html">EventLink</a>,
+    <a href="http://tapestry.apache.org/page-navigation.html">Page Navigation</a>,
+    <a href="http://tapestry.apache.org/component-events.html">Component Events</a>.<br/><br/>
+
+    <t:pagelink t:page="Index">Home</t:pagelink><br/><br/>
+</body>
+</html>
