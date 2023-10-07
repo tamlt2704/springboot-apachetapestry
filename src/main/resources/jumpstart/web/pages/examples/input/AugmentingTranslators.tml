@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- We need a doctype to allow us to use special characters like &nbsp;
+     We use a "strict" DTD to make IE follow the alignment rules. -->
+
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd">
+<body class="container">
+    <h3>Augmenting Translators</h3>
+
+    The built-in translators bubble up events <em>toClient</em> and <em>parseClient</em> before doing their translation. <br/>
+    We can handle those events, which allows us to augment, or even override, the translator.
+
+    <div class="eg">
+        <t:form class="form-horizontal" t:id="inputs">
+            <div class="form-group">
+                <t:label for="primitiveWithZeroSuppressed" class="col-sm-4"/>
+                <div class="col-sm-2">
+                    <t:textfield t:id="primitiveWithZeroSuppressed"/>
+                </div>
+                <div class="col-sm-6">
+                    <p class="form-control-static">
+                        ${primitiveWithZeroSuppressed}
+                        &nbsp;&nbsp;
+                        <span class="text-muted">${primitiveWithZeroSuppressedMessage}</span>
+                    </p>
+                </div>
+            </div>
+            <div class="form-group">
+                <t:label for="objectDisplayingNullAsZero" class="col-sm-4"/>
+                <div class="col-sm-2">
+                    <t:textfield t:id="objectDisplayingNullAsZero"/>
+                </div>
+                <div class="col-sm-6">
+                    <p class="form-control-static">
+                        ${objectDisplayingNullAsZero}
+                        &nbsp;&nbsp;
+                        <span class="text-muted">${objectDisplayingNullAsZeroMessage}</span>
+                    </p>
+                </div>
+            </div>
+            <div class="form-group">
+                <t:label for="objectUsingZeroNullFieldStrategy" class="col-sm-4">
+                    Object Using ZeroNullFieldStrategy
+                </t:label>
+                <div class="col-sm-2">
+                    <t:textfield t:id="objectUsingZeroNullFieldStrategy" t:nulls="zero"/>
+                </div>
+                <div class="col-sm-6">
+                    <p class="form-control-static">
+                        ${objectUsingZeroNullFieldStrategy}
+                        &nbsp;&nbsp;
+                        <span class="text-muted">${objectUsingZeroNullFieldStrategyMessage}</span>
+                    </p>
+                </div>
+            </div>
+            <div class="form-group">
+                <t:label for="objectAllowingShorthandInput" class="col-sm-4"/>
+                <div class="col-sm-2">
+                    <t:textfield t:id="objectAllowingShorthandInput" t:nulls="zero" t:mixins="ClientTranslatorDisabler"/>
+                </div>
+                <div class="col-sm-6">
+                    <p class="form-control-static">
+                        ${objectAllowingShorthandInput}
+                        &nbsp;&nbsp;
+                        <span class="text-muted">(eg. 2k=2000,5m=5000000)&nbsp;&nbsp;${objectAllowingShorthandInputMessage}</span>
+                    </p>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-2 col-sm-offset-4">
+                    <t:submit/>
+                </div>
+            </div>
+        </t:form>
+    </div>
+
+    <ul>
+        <li>(1) Uses <em>toClient</em> to translate <em>0</em> server-side to empty string client-side.
+            The client-side translator will not let you leave the field empty because it knows that server-side is a <em>long</em>.</li>
+        <li>(2) Uses <em>toClient</em> to translate <em>null</em> server-side to <em>"0"</em> client-side.
+            Notice that if you empty it, <em>parseClient</em> will NOT bubble up.</li>
+        <li>(3) Uses <a href="http://tapestry.apache.org/5.4/apidocs/org/apache/tapestry5/internal/ZeroNullFieldStrategy.html">ZeroNullFieldStrategy</a>
+            which translates <em>null</em> server-side to <em>"0"</em> client-side, and empty field client-side to <em>0</em> server-side.</li>
+        <li>(4) Uses <em>parseClient</em> to translate shorthand input into numerics (eg. <em>"2k"</em> client-side to <em>2000</em> server-side).</li>
+        <li>(4) Also uses a <em>mixin</em>, to disable the client-side translator which would prevent non-numeric input.
+            A better mixin might be one that allows a numeric with a <em>k</em> or <em>m</em> suffix.
+            For more about mixins see the Mixin examples.</li>
+    </ul>
+
+    References:
+    <a href="http://tapestry.apache.org/forms-and-validation.html#FormsandValidation-OverridingtheTranslatorwithEvents">Overriding the Translator with Events</a>,
+    <a href="http://tapestry.apache.org/5.4/apidocs/org/apache/tapestry5/Translator.html">Translator</a>,
+    <a href="http://tapestry.apache.org/5.4/apidocs/org/apache/tapestry5/internal/translator/package-summary.html">translator package</a>,
+    <a href="http://tapestry.apache.org/5.4/apidocs/org/apache/tapestry5/corelib/components/TextField.html">TextField</a>,
+    <a href="http://tapestry.apache.org/5.4/apidocs/org/apache/tapestry5/corelib/components/PasswordField.html">PasswordField</a>,
+    <a href="http://tapestry.apache.org/5.4/apidocs/org/apache/tapestry5/corelib/components/TextArea.html">TextArea</a>,
+    <a href="http://tapestry.apache.org/5.4/apidocs/org/apache/tapestry5/NullFieldStrategy.html">NullFieldStrategy</a>,
+    <a href="http://tapestry.apache.org/5.4/apidocs/org/apache/tapestry5/internal/DefaultNullFieldStrategy.html">DefaultNullFieldStrategy</a>,
+    <a href="http://tapestry.apache.org/5.4/apidocs/org/apache/tapestry5/internal/ZeroNullFieldStrategy.html">ZeroNullFieldStrategy</a>.
+    <br/><br/>
+
+    <t:pagelink page="Index">Home</t:pagelink><br/><br/>
+</body>
+</html>

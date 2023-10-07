@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- We need a doctype to allow us to use special characters like &nbsp;
+     We use a "strict" DTD to make IE follow the alignment rules. -->
+
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd">
+<body class="container">
+    <h3>Translators</h3>
+    A Translator converts between a value on the server-side and its string representation on the client side.<br/>
+    This example demonstrates TextField's use of Tapestry's built-in translators.
+    TextField, PasswordField, and TextArea all use them.
+
+    <div class="eg">
+        <t:form class="form-horizontal" t:id="inputs">
+            <div class="form-group">
+                <t:label for="byteValue" class="col-sm-2"/>
+                <div class="col-sm-2">
+                    <t:textfield t:id="byteValue"/>
+                </div>
+                <div class="col-sm-2">
+                    <p class="form-control-static">${byteValue}</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <t:label for="shortValue" class="col-sm-2"/>
+                <div class="col-sm-2">
+                    <t:textfield t:id="shortValue"/>
+                </div>
+                <div class="col-sm-2">
+                    <p class="form-control-static">${shortValue}</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <t:label for="integerValue" class="col-sm-2"/>
+                <div class="col-sm-2">
+                    <t:textfield t:id="integerValue"/>
+                </div>
+                <div class="col-sm-2">
+                    <p class="form-control-static">${integerValue}</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <t:label for="longValue" class="col-sm-2"/>
+                <div class="col-sm-2">
+                    <t:textfield t:id="longValue"/>
+                </div>
+                <div class="col-sm-2">
+                    <p class="form-control-static">${longValue}</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <t:label for="floatValue" class="col-sm-2"/>
+                <div class="col-sm-2">
+                    <t:textfield t:id="floatValue"/>
+                </div>
+                <div class="col-sm-2">
+                    <p class="form-control-static">${floatValue}</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <t:label for="doubleValue" class="col-sm-2"/>
+                <div class="col-sm-2">
+                    <t:textfield t:id="doubleValue"/>
+                </div>
+                <div class="col-sm-2">
+                    <p class="form-control-static">${doubleValue}</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <t:label for="bigIntegerValue" class="col-sm-2"/>
+                <div class="col-sm-2">
+                    <t:textfield t:id="bigIntegerValue"/>
+                </div>
+                <div class="col-sm-2">
+                    <p class="form-control-static">${bigIntegerValue}</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <t:label for="bigDecimalValue" class="col-sm-2"/>
+                <div class="col-sm-2">
+                    <t:textfield t:id="bigDecimalValue"/>
+                </div>
+                <div class="col-sm-2">
+                    <p class="form-control-static">${bigDecimalValue}</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <t:label for="stringValue" class="col-sm-2"/>
+                <div class="col-sm-2">
+                    <t:textfield t:id="stringValue"/>
+                </div>
+                <div class="col-sm-2">
+                    <p class="form-control-static">${stringValue}</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-2 col-sm-offset-2">
+                    <t:submit/>
+                </div>
+            </div>
+
+        </t:form>
+    </div>
+
+    The built-in translators bubble up events <em>toClient</em> and <em>parseClient</em>, which we do not use in this example.
+    See the Augmenting Translators example.<br/><br/>
+
+    The String translator does not do any conversion.
+    It exists only to bubble up the <em>toClient</em> and <em>parseClient</em> events.<br/><br/>
+
+    References:
+    <a href="http://tapestry.apache.org/5.4/apidocs/org/apache/tapestry5/Translator.html">Translator</a>,
+    <a href="http://tapestry.apache.org/5.4/apidocs/org/apache/tapestry5/internal/translator/package-summary.html">translator package</a>,
+    <a href="http://tapestry.apache.org/5.4/apidocs/org/apache/tapestry5/corelib/components/TextField.html">TextField</a>,
+    <a href="http://tapestry.apache.org/5.4/apidocs/org/apache/tapestry5/corelib/components/PasswordField.html">PasswordField</a>,
+    <a href="http://tapestry.apache.org/5.4/apidocs/org/apache/tapestry5/corelib/components/TextArea.html">TextArea</a>.
+    <br/><br/>
+
+    <t:pagelink page="Index">Home</t:pagelink><br/><br/>
+</body>
+</html>
