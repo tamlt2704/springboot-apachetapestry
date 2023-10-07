@@ -47,10 +47,20 @@
                    <t:pagelink t:page="examples/tables/StyledLoop">Styled Loop</t:pagelink><br/><br/>
                    <t:pagelink t:page="examples/tables/LinkingLoop1">Linking Loop</t:pagelink><br/>
                 </div>
+
+                <div class="group">
+                   <t:pagelink t:page="examples/lang/PreviewableTemplates">Previewable Templates</t:pagelink><br/>
+                   <t:pagelink t:page="examples/lang/AtComponent">@Component Templates</t:pagelink><br/>
+                </div>
             </td>
 
             <td>
                 <div class="category"> INPUT </div>
+                <div class="group">
+                   <t:pagelink t:page="examples/input/RequestTypes">Request Types</t:pagelink><br/><br/>
+                   <t:pagelink t:page="examples/input/Forms1">Forms</t:pagelink><br/>
+                   <t:pagelink t:page="examples/input/FormsExplained1">FormsExplained</t:pagelink><br/>
+                </div>
             </td>
 
             <td>

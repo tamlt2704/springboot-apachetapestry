@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- We need a doctype to allow us to use special characters like &nbsp;
+     We use a "strict" DTD to make IE follow the alignment rules. -->
+
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd">
+<head>
+    <t:remove>
+        <link type="text/css" rel="stylesheet" href="jar:file:../../../../../../lib-compile/tapestry-core-5.4-alpha-28.jar!/META-INF/assets/tapestry5/bootstrap-3.0.2/css/bootstrap.css"/>
+        <link type="text/css" rel="stylesheet" href="jar:file:../../../../../../lib-compile/tapestry-core-5.4-alpha-28.jar!/META-INF/assets/tapestry5/tapestry.css"/>
+        <link type="text/css" rel="stylesheet" href="../../../../../../resources/META-INF/assets/css/examples/olive.css"/>
+    </t:remove>
+</head>
+<body class="container">
+    <h3>Previewable Templates</h3>
+
+    Tapestry template files can be opened in a web browser or WYSIWYG editor for "preview".
+    This can be great for the web page designer.
+    However, your <em>template coding style</em> will affect <em>how well</em> they "preview".<br/><br/>
+
+    Tapestry allows 2 different coding styles. Here is the code for a page link, done in both coding styles:<br/>
+
+    <div class="eg">
+        <code>&lt;t:pagelink page="Index"&gt;Home&lt;/t:pagelink&gt;</code> <br/>
+        <code>&lt;a t:type="pagelink" t:page="Index" href="#"&gt;Home&lt;/a&gt;</code>
+    </div>
+
+    The first style uses the component type, <code>t:pagelink</code>, as the element type. The code is short
+    and easy to read, but it will not preview well. That's because <code>t:pagelink</code>
+    <em>is not an ordinary HTML element</em> - the browser does not know how it should look.<br/><br/>
+
+    The second style is called <strong>invisible instrumentation</strong>. We have <em>"hidden"</em> the component
+    <em>in an ordinary HTML element</em>, <code>a</code> (an anchor element).
+    During preview a web browser will display <em>Home</em> as a hyperlink, which is exactly what we want.
+    At runtime Tapestry will detect our component (it looks for <code>t:type</code> and/or <code>t:id</code>)
+    and replace the whole element. We added <code>href="#"</code> to satisfy certain browsers.<br/><br/>
+
+    <p><strong>To see the difference</strong> that invisible instrumentation makes, first copy and paste the
+    PreviewableTemplates.tml source (see below) into a file or else just find it in the project at:</p>
+    <ul>
+        <li>web/src/main/java/jumpstart/web/pages/examples/lang/PreviewableTemplates.tml</li>
+    </ul>
+
+    Now use Firefox to open the template file and see how the second coding style previews better:
+
+    <div class="eg">
+        <t:pagelink page="Index">Home</t:pagelink> <br/>
+        <a t:type="pagelink" t:page="Index" href="#">Home</a>
+    </div>
+
+    <strong>Which is best?</strong>  The choice is yours. Invisible instrumentation may make code more readable,
+    and it may enable better sharing of templates between developers and web designers. <br/><br/>
+
+    However, preview-ability becomes lost as components become more nested, as Tapestry components (such as Form) emit
+    CSS classes at runtime, and as AJAX and JavaScript add dynamic behaviour. These days it may be better to do what many
+    teams do: give the web designer a development environment where they can edit and interact with the UI live.<br/><br/>
+
+    In JumpStart, since v7.0, we don't use invisible instrumentation except in rare cases where we feel it improves readability.<br/><br/>
+
+    References:
+    <a href="http://tapestry.apache.org/component-templates.html#ComponentTemplates-InvisibleInstrumentation">Invisible Instrumentation</a>.
+    <br/><br/>
+</body>
+</html>

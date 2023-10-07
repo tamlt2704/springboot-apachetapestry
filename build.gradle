@@ -21,6 +21,7 @@ def tapestryVersion = "5.8.3"
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
     implementation "org.apache.tapestry:tapestry-core:${tapestryVersion}"
     implementation "org.apache.tapestry:tapestry-spring:${tapestryVersion}"
 
