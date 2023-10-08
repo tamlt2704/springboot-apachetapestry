@@ -109,6 +109,7 @@
 
                 <div class="group">
                     <t:pagelink t:page="examples/state/PassingDataBetweenPages">Passing Data Between Pages</t:pagelink><br/>
+                    <t:pagelink t:page="examples/state/SharingAcrossMultiplePages1">Sharing Across Multiple Pages</t:pagelink><br/>
 
                 </div>
             </td>

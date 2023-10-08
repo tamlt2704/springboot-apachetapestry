@@ -19,6 +19,8 @@ import org.apache.tapestry5.ioc.annotations.*;
 import org.apache.tapestry5.ioc.services.ClasspathURLConverter;
 import org.apache.tapestry5.ioc.services.ServiceOverride;
 import org.apache.tapestry5.ioc.services.ThreadLocale;
+import org.apache.tapestry5.services.ApplicationStateContribution;
+import org.apache.tapestry5.services.ApplicationStateCreator;
 import org.apache.tapestry5.services.BeanBlockContribution;
 import org.apache.tapestry5.services.ComponentRequestFilter;
 import org.apache.tapestry5.services.DisplayBlockContribution;
