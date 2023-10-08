@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- We need a doctype to allow us to use special characters like &nbsp; 
+     We use a "strict" DTD to make IE follow the alignment rules. -->
+     
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd" xmlns:p="tapestry:parameter">
+<body class="container">
+    <h3>More Control Edit (Using BeanEditor) (1)</h3>
+    
+    BeanEditForm is a component that combines 3 other components: BeanEditor, Form, and Errors.<br/>
+    When we need more control we can do the same: instead of using BeanEditForm we can combine those 3 components and add others if needed.<br/>
+    Here we have added a "Refresh" link.
+    
+    <div class="eg">
+        <t:form t:id="personform">
+            <t:errors globalOnly="true"/>
+        
+            <div class="t-beaneditor">
+                <t:if test="person">
+                    <t:beaneditor t:id="person" object="person">
+                        <!-- If optimistic locking is not needed then comment out this next bit. It works because Hidden fields are part of the submit. -->
+                        <p:version>
+                            <t:hidden value="person.version"/>
+                        </p:version>
+                    </t:beaneditor>
+                
+                    <div class="t-beaneditor-row">
+                        <t:submit value="Save"/>&nbsp;
+                        <t:eventlink event="refresh" class="btn btn-default">Refresh</t:eventlink>&nbsp;
+                    </div>
+                </t:if>
+                <t:if test="!person">
+                    <div class="alert alert-danger">Person ${personId} does not exist.</div>
+                </t:if>
+            </div>
+        </t:form>
+    </div>
+
+    References: 
+    <a href="http://tapestry.apache.org/5.4/apidocs/org/apache/tapestry5/corelib/components/BeanEditor.html">BeanEditor</a>, 
+    <a href="http://tapestry.apache.org/5.4/apidocs/org/apache/tapestry5/corelib/components/Form.html">Form</a>, 
+    <a href="http://tapestry.apache.org/5.4/apidocs/org/apache/tapestry5/corelib/components/Errors.html">Errors</a>, 
+    <a href="http://svn.apache.org/viewvc/tapestry/tapestry5/trunk/tapestry-core/src/main/resources/org/apache/tapestry5/corelib/components/BeanEditForm.tml?view=markup">
+    BeanEditForm.tml</a>, 
+    <a href="http://tapestry.apache.org/5.4/apidocs/org/apache/tapestry5/beaneditor/package-summary.html">beaneditor package</a>, 
+    <a href="http://tapestry.apache.org/5.4/apidocs/org/apache/tapestry5/corelib/components/Hidden.html">Hidden</a>.<br/><br/>
+
+    <t:pagelink page="Index">Home</t:pagelink><br/><br/>
+    
+    The source for IPersonFinderServiceLocal, IPersonManagerServiceLocal, and @EJB is shown in the Session Beans and @EJB examples.<br/><br/>
+</body>
+</html>
