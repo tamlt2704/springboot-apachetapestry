@@ -15,7 +15,7 @@ public class TapestryConfig {
         FilterRegistrationBean<org.apache.tapestry5.spring.TapestrySpringFilter> registrationBean = new FilterRegistrationBean<>();
 
         registrationBean.setFilter(new org.apache.tapestry5.spring.TapestrySpringFilter());
-        registrationBean.setName("jumpstart");
+        registrationBean.setName("app");
         registrationBean.addUrlPatterns("/*");
         registrationBean.setDispatcherTypes(EnumSet.allOf(DispatcherType.class));
         return registrationBean;
