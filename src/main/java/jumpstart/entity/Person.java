@@ -1,11 +1,17 @@
 package jumpstart.entity;
 
-import com.sun.istack.NotNull;
-import lombok.*;
+import lombok.Data;
+import lombok.Builder;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
+import lombok.AllArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
 import org.springframework.data.annotation.LastModifiedDate;
 
 import javax.persistence.*;
+import javax.validation.ValidationException;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
@@ -27,10 +33,12 @@ public class Person {
 
     @Column(length = 25, nullable = false)
     @NotNull
+    @Size(max = 25)
     private String firstName;
 
     @Column(length = 25, nullable = false)
     @NotNull
+    @Size(max = 25)
     private String lastName;
 
     @Enumerated(EnumType.STRING)
@@ -60,5 +68,10 @@ public class Person {
     @Override
     public int hashCode() {
         return Objects.hash(id, version, firstName, lastName, region, startDate);
+    }
+
+    @PrePersist
+    @PreUpdate
+    public void validate() throws ValidationException {
     }
 }

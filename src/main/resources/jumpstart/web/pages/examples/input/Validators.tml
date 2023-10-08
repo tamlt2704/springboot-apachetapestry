@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- We need a doctype to allow us to use special characters like &nbsp;
+     We use a "strict" DTD to make IE follow the alignment rules. -->
+
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd">
+<body class="container">
+    <h3>Validators</h3>
+    Client-side and server-side, validation occurs AFTER translation.<br/><br/>
+
+    Tapestry has two declarative styles of validation: industry-standard
+    <a href="http://en.wikipedia.org/wiki/Bean_Validation">Bean Validation</a> (JSR 303), and Tapestry Validators.<br/><br/>
+
+    Here we demonstrate Bean Validation, using the page as a bean. We annotated the page's properties
+    <code>firstName</code> and <code>lastName</code> with JSR 303's <code>@NotNull</code> and <code>@Size</code>.
+
+    <div class="eg">
+
+        <t:form class="form-horizontal">
+            <div class="form-group">
+                <t:label for="firstName" class="col-sm-3"/>
+                <div class="col-sm-3">
+                    <t:textfield t:id="firstName"/>
+                </div>
+                <div class="col-sm-6">
+                    <p class="form-control-static">
+                        ${firstName}
+                        <span class="text-muted">
+                            (not null, size max = 10)
+                        </span>
+                    </p>
+                </div>
+            </div>
+            <div class="form-group">
+                <t:label for="lastName" class="col-sm-3"/>
+                <div class="col-sm-3">
+                    <t:textfield t:id="lastName"/>
+                </div>
+                <div class="col-sm-6">
+                    <p class="form-control-static">
+                        ${lastName}
+                        <span class="text-muted">
+                            (not null, size max = 10)
+                        </span>
+                    </p>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-3 col-sm-offset-3">
+                    <t:submit/>
+                </div>
+            </div>
+        </t:form>
+
+    </div>
+
+    All bean validations have a server-side implementation, and most (or all?) have a client-side implementation.<br/>
+    If the form passes client-side validation, then it is sent to the server, where it is validated again.<br/>
+    To turn off client-side validation programatically, set Form's <code>clientValidation</code> parameter.<br/><br/>
+
+    <p>Bean Validation is not in Tapestry's corelib. To use it, add the following jars to the classpath:</p>
+    <ul>
+        <li>tapestry-beanvalidator-5.4.n.jar, for compile and runtime.</li>
+        <li>a JSR 303 implementation, such as hibernate-validator-4.3.1.Final.jar, for runtime.
+            It can be provided by the runtime environment.</li>
+    </ul>
+    and follow the Configuration information <a href="http://tapestry.apache.org/bean-validation.html">here</a>.<br/><br/>
+
+    References:
+    <a href="http://tapestry.apache.org/bean-validation.html">Bean Validation</a>,
+    <a href="http://docs.oracle.com/javaee/6/api/javax/validation/constraints/package-summary.html">the standard annotations</a>,
+    <a href="http://tapestry.apache.org/5.4/apidocs/org/apache/tapestry5/corelib/components/Form.html">Form</a>,
+    <a href="http://tapestry.apache.org/5.4/apidocs/org/apache/tapestry5/corelib/components/TextField.html">TextField</a>.
+    <br/><br/>
+
+    <t:pagelink page="Index">Home</t:pagelink><br/><br/>
+</body>
+</html>

@@ -92,7 +92,10 @@
                     <t:pagelink t:page="examples/input/Translators">Translators</t:pagelink><br/>
                     <t:pagelink t:page="examples/input/PrimitivesTranslators">Primitives Translators</t:pagelink><br/>
                     <t:pagelink t:page="examples/input/AugmentingTranslators">Augmenting Translators</t:pagelink><br/>
-                    <t:pagelink t:page="examples/input/ContributingTranslators">Contributing Translators</t:pagelink><br/>
+                    <t:pagelink t:page="examples/input/ContributingTranslators">Contributing Translators</t:pagelink><br/><br/>
+
+                    <t:pagelink t:page="examples/input/Validators">Validators</t:pagelink><br/>
+                    <t:pagelink t:page="examples/input/BeanValidators">Bean Validators</t:pagelink><br/>
                 </div>
             </td>
 
