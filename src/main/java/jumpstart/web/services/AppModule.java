@@ -4,6 +4,7 @@ import java.util.Map;
 
 import jumpstart.web.translators.MoneyTranslator;
 import jumpstart.web.translators.YesNoTranslator;
+import jumpstart.web.validation.constraints.Letters;
 import org.apache.tapestry5.MarkupWriter;
 import org.apache.tapestry5.SymbolConstants;
 import org.apache.tapestry5.Translator;
@@ -71,4 +72,22 @@ public class AppModule {
     /*public void contributeComponentRequestHandler(OrderedConfiguration<ComponentRequestFilter> configuration) {
         configuration.addInstance("PageProtectionFilter", PageProtectionFilter.class);
     }*/
+
+
+    // Tell Tapestry about the client-side (javascript) validators that corresponds to each server-side Bean Validator.
+
+    public static void contributeClientConstraintDescriptorSource(final JavaScriptSupport javaScriptSupport,
+                                                                  final Configuration<ClientConstraintDescriptor> configuration) {
+
+        configuration.add(new BaseCCD(Letters.class) {
+
+            public void applyClientValidation(MarkupWriter writer, String message, Map<String, Object> attributes) {
+                javaScriptSupport.require("beanvalidation/letters");
+                writer.attributes(DataConstants.VALIDATION_ATTRIBUTE, true, "data-validate-letters", true,
+                        "data-letters-message", message);
+            }
+
+        });
+
+    }
 }

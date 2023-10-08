@@ -96,6 +96,10 @@
 
                     <t:pagelink t:page="examples/input/Validators">Validators</t:pagelink><br/>
                     <t:pagelink t:page="examples/input/BeanValidators">Bean Validators</t:pagelink><br/>
+                    <t:pagelink t:page="examples/input/TapestryValidators">Tapestry Validators</t:pagelink><br/>
+                    <t:pagelink t:page="examples/input/ProgrammaticValidation">Programmatic Validation</t:pagelink><br/>
+                    <t:pagelink t:page="examples/input/TheValidateEvent">The ValidateEvent</t:pagelink><br/>
+                    <t:pagelink t:page="examples/input/ContributingValidators">Contributing Validators</t:pagelink><br/>
                 </div>
             </td>
 
