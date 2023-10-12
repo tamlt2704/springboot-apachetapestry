@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- We need a doctype to allow us to use special characters like &nbsp;
+     We use a "strict" DTD to make IE follow the alignment rules. -->
+
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd">
+<body class="container">
+<h3>Varied Select</h3>
+
+<div class="eg">
+    This example demonstrates labelling the blank option by setting the parameter <em>blankLabel</em>.<br/><br/>
+
+    <t:form class="form-inline">
+        <div class="form-group">
+            <t:label for="color0"/>:
+            <t:select t:id="color0" model="literal:Red,Yellow,Blue" blankLabel="Choose..."/>
+            <t:submit/>
+            You chose: ${color0}
+        </div>
+    </t:form>
+</div>
+<div class="eg">
+    This example demonstrates labelling the blank option by providing a property in the page's properties file.<br/><br/>
+
+    <t:form class="form-inline">
+        <div class="form-group">
+            <t:label for="color1"/>:
+            <t:select t:id="color1" model="literal:Red,Yellow,Blue"/>
+            <t:submit/>
+            You chose: ${color1}
+        </div>
+    </t:form>
+</div>
+<div class="eg">
+    This example demonstrates removing the blank option by setting the parameter <em>validate</em> to <em>required</em>.<br/><br/>
+
+    <t:form class="form-inline">
+        <div class="form-group">
+            <t:label for="color2"/>:
+            <t:select t:id="color2" model="literal:Red,Yellow,Blue" validate="required"/>
+            <t:submit/>
+            You chose: ${color2}
+        </div>
+    </t:form>
+</div>
+<div class="eg">
+    This example demonstrates keeping the blank option while also setting the parameter <em>validate</em> to <em>required</em>.<br/><br/>
+
+    <t:form class="form-inline">
+        <div class="form-group">
+            <t:label for="color3"/>:
+            <t:select t:id="color3" model="literal:Red,Yellow,Blue" validate="required" blankOption="ALWAYS"/>
+        </div>
+        <div class="form-group">
+            <t:submit/>
+        </div>
+        <div class="form-group">
+            You chose: ${color3}
+        </div>
+    </t:form>
+</div>
+
+References:
+<a href="http://tapestry.apache.org/5.4/apidocs/org/apache/tapestry5/corelib/components/Select.html">Select</a>,
+<a href="http://tapestry.apache.org/5.4/apidocs/org/apache/tapestry5/corelib/data/BlankOption.html">BlankOption</a>.<br/><br/>
+
+<t:pagelink page="Index">Home</t:pagelink><br/><br/>
+</body>
+</html>

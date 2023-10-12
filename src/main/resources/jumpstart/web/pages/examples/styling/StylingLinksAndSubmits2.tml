@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- We need a doctype to allow us to use special characters like &nbsp;
+     We use a "strict" DTD to make IE follow the alignment rules. -->
+
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd">
+<body class="container">
+    <h3>Styling Links and Submits (1)</h3>
+
+    Some techniques for styling PageLink, EventLink, and Submit.<br/>
+
+    <div class="eg">
+        <strong>Page Links</strong><br/><br/>
+
+        <t:pagelink t:page="examples/styling/LinksAndSubmits2" t:context="literal:PageLink" href="#">
+            Next
+        </t:pagelink>
+        <t:pagelink t:page="examples/styling/LinksAndSubmits2" t:context="literal:PageLink with class btn"
+            class="btn btn-default" href="#">
+            Next
+        </t:pagelink>
+        <t:pagelink t:page="examples/styling/LinksAndSubmits2" t:context="literal:PageLink with img"
+            class="imagelink" href="#">
+            <img src="${nextImageAsset}" alt="Next" />
+        </t:pagelink>
+    </div>
+
+    <div class="eg">
+        <strong>Event Links</strong><br/><br/>
+
+        <t:eventlink t:event="NextPage" t:context="literal:EventLink" href="#">
+            Next
+        </t:eventlink>
+        <t:eventlink t:event="NextPage" t:context="literal:EventLink with class btn" class="btn btn-default">
+            Next
+        </t:eventlink>
+        <t:eventlink t:event="NextPage" t:context="literal:EventLink with img" class="imagelink">
+            <img src="${nextImageAsset}" alt="Next"/>
+        </t:eventlink>
+    </div>
+
+    <div class="eg">
+        <strong>Submit</strong><br/><br/>
+
+        <t:form t:id="inputs">
+            <div class="form-group">
+                <t:label for="firstName"/>
+                <t:textfield t:id="firstName" t:validate="required"/>&nbsp;
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Display"/>&nbsp;
+                <t:submit value="Display"/>&nbsp;
+                <t:submit value="Display" class=""/>&nbsp;
+                <t:submit value="Display" class="btn btn-default"/>&nbsp;
+                <input type="image" src="${nextImageAsset}" style="vertical-align: middle;"/>
+                <t:submit value=" " class="nextimage"/>&nbsp;
+                <t:submit image="asset:images/next-button-48.png"/>&nbsp;
+                <t:submit image="asset:images/next-button-48.png" class="" style="vertical-align: middle;"/>&nbsp;
+            </div>
+        </t:form>
+    </div>
+
+    References:
+    <a href="http://tapestry.apache.org/5.4/apidocs/org/apache/tapestry5/corelib/components/PageLink.html">PageLink</a>,
+    <a href="http://tapestry.apache.org/5.4/apidocs/org/apache/tapestry5/corelib/components/EventLink.html">EventLink</a>,
+    <a href="http://tapestry.apache.org/5.4/apidocs/org/apache/tapestry5/corelib/components/ActionLink.html">ActionLink</a>,
+    <a href="http://tapestry.apache.org/5.4/apidocs/org/apache/tapestry5/corelib/components/Submit.html">Submit</a>,
+    <a href="http://tapestry.apache.org/5.4/apidocs/org/apache/tapestry5/annotations/Path.html">Path</a>,
+    <a href="http://tapestry.apache.org/5.4/apidocs/org/apache/tapestry5/Asset.html">Asset</a>.<br/><br/>
+
+    <t:pagelink page="Index">Home</t:pagelink><br/><br/>
+</body>
+</html>

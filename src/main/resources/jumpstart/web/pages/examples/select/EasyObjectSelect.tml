@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- We need a doctype to allow us to use special characters like &nbsp;
+     We use a "strict" DTD to make IE follow the alignment rules. -->
+
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd">
+<body class="container">
+<h3>Easy Object Select</h3>
+
+This page demonstrates selecting from a more complex model - a list of objects from the database.<br/>
+This is easy to achieve using <strong>SelectModelFactory</strong> and a custom <strong>ValueEncoder</strong>, and together <br/>
+they allow us to avoid storing the list of objects in the session and avoid rebuilding the list on submit.
+
+<div class="eg">
+    <t:form t:id="form" class="form-inline">
+        <div class="form-group">
+            Person:
+            <t:select model="personsModel" value="person" encoder="personEncoder"/>
+        </div>
+        <div class="form-group">
+            <t:submit/>
+        </div>
+        <div class="form-group">
+            You chose: ${person}
+        </div>
+    </t:form>
+</div>
+
+In this example we feed a list of Persons (from the database) into SelectModelFactory to produce a SelectModel.<br/>
+We tell it to use firstName as the option label. <br/>
+We want the option value to be the person's id so we provide PersonEncoder, which converts between a Person, server-side, and their id, for client-side.<br/>
+Note that PersonEncoder goes to the database when it converts an id to a Person, but this happens only on submit, and only for the chosen person.<br/><br/>
+
+References:
+<a href="http://tapestry.apache.org/5.4/apidocs/org/apache/tapestry5/corelib/components/Select.html">Select</a>,
+<a href="http://tapestry.apache.org/using-select-with-a-list.html">Using Select with a List</a>,
+<a href="http://tapestry.apache.org/5.4/apidocs/org/apache/tapestry5/SelectModel.html">SelectModel</a>,
+<a href="http://tapestry.apache.org/5.4/apidocs/org/apache/tapestry5/services/SelectModelFactory.html">SelectModelFactory</a>,
+<a href="http://tapestry.apache.org/5.4/apidocs/org/apache/tapestry5/ValueEncoder.html">ValueEncoder</a>,
+<a href="http://tapestry.apache.org/5.4/apidocs/org/apache/tapestry5/EventContext.html">EventContext</a>,
+<a href="http://wiki.apache.org/tapestry/Tapestry5HowtoSelectWithObjects">How To Select With Objects</a>.<br/><br/>
+
+<t:pagelink page="Index">Home</t:pagelink><br/><br/>
+
+The source for IPersonFinderServiceLocal and @EJB is shown in the Session Beans and @EJB examples.<br/><br/>
+</body>
+</html>

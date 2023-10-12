@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- We need a doctype to allow us to use special characters like &nbsp;
+     We use a "strict" DTD to make IE follow the alignment rules. -->
+
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd">
+<body class="container">
+<h3>AJAX Select Dependency (1)</h3>
+
+<noscript class="js-required">
+    ${message:javascript_required}
+</noscript>
+
+In this example, Source and Make are independent of each other, but Model depends on Make AND Source combined.<br/>
+Note that there are no models in Local Honda or Imported Holden combinations.
+
+<div class="eg">
+    <t:form t:id="searchCriteria">
+
+        <div class="form-group form-inline">
+
+            <div class="form-group">
+                <t:zone t:id="carSourceZone" id="carSourceZone" style="display: inline;">
+                    <t:label for="carSource"/>
+                    <t:select t:id="carSource" model="carSources" blankOption="ALWAYS" blankLabel="Choose..." validate="required" secure="never"
+                              zone="carModelZone"/>
+                </t:zone>
+            </div>
+
+            <div class="form-group">
+                <t:zone t:id="carMakeZone" id="carMakeZone" style="display: inline;">
+                    <t:label for="carMake"/>
+                    <t:select t:id="carMake" model="carMakes" blankOption="ALWAYS" blankLabel="Choose..." validate="required" secure="never"
+                              zone="carModelZone"/>
+                </t:zone>
+            </div>
+
+            <div class="form-group">
+                <t:zone t:id="carModelZone" id="carModelZone" style="display: inline;">
+                    <t:label for="carModel"/>
+                    <t:select t:id="carModel" model="carModels" blankOption="ALWAYS" blankLabel="Choose..." validate="required" secure="never"/>
+                </t:zone>
+            </div>
+
+            <div class="form-group">
+                <t:label for="keywords"/>
+                <t:textfield t:id="keywords" class="keywords"/>
+            </div>
+
+            <div class="form-group">
+                <p class="form-control-static">(optional)</p>
+            </div>
+
+        </div>
+
+        <div class="form-group">
+            <t:submit value="Save"/>
+        </div>
+
+        <t:errors globalOnly="true"/>
+    </t:form>
+</div>
+
+The tricky part of this is that AJAX Select requests pass only one context value, ie. the value of the Select; <br/>
+so when you change Source how can you also send the chosen Make, and when you change Make how can you also send the chosen Source?<br/>
+We solve it by persisting <em>chosenCarSource</em> and <em>chosenCarMake</em> in the generated URLs by using <em>@ActivationRequestParameter</em>.<br/><br/>
+
+References:
+<a href="http://tapestry.apache.org/5.4/apidocs/org/apache/tapestry5/annotations/ActivationRequestParameter.html">@ActivationRequestParameter</a>,
+<a href="http://tapestry.apache.org/ajax-and-zones.html">Ajax and Zones</a>,
+<a href="http://tapestry.apache.org/5.4/apidocs/org/apache/tapestry5/corelib/components/Zone.html">Zone</a>,
+<a href="http://tapestry.apache.org/5.4/apidocs/org/apache/tapestry5/corelib/components/Select.html">Select</a>,
+<a href="http://tapestry.apache.org/5.4/apidocs/org/apache/tapestry5/corelib/components/TextField.html">TextField</a>,
+<a href="http://tapestry.apache.org/5.4/apidocs/org/apache/tapestry5/services/Request.html">Request</a>,
+<a href="http://tapestry.apache.org/5.4/apidocs/org/apache/tapestry5/services/ajax/AjaxResponseRenderer.html">AjaxResponseRenderer</a>,
+<a href="http://tapestry.apache.org/5.4/apidocs/org/apache/tapestry5/ioc/annotations/Inject.html">@Inject</a>,
+<a href="http://tapestry.apache.org/5.4/apidocs/org/apache/tapestry5/annotations/InjectComponent.html">@InjectComponent</a>.<br/><br/>
+
+<t:pagelink page="Index">Home</t:pagelink><br/><br/>
+</body>
+</html>

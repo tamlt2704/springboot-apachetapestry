@@ -12,7 +12,7 @@ java {
 }
 
 repositories {
-    mavenLocal()
+    //mavenLocal()
     mavenCentral()
 }
 
@@ -26,8 +26,13 @@ dependencies {
     implementation "org.apache.tapestry:tapestry-spring:${tapestryVersion}"
     implementation "org.apache.tapestry:tapestry-beanvalidator:${tapestryVersion}"
 //    implementation "org.apache.tapestry:plastic:${tapestryVersion}"
-
+    implementation 'org.apache.commons:commons-compress:1.24.0'
+    implementation 'org.tukaani:xz:1.9'
+    implementation 'org.jasypt:jasypt:1.9.2'
     implementation "net.datafaker:datafaker:2.0.1"
+    implementation "commons-codec:commons-codec:1.16.0"
+    implementation "com.google.zxing:core:3.4.0"
+    implementation "com.google.zxing:javase:3.4.0"
 
     runtimeOnly 'com.h2database:h2'
 

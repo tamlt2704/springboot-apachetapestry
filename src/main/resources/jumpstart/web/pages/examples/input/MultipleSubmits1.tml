@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- We need a doctype to allow us to use special characters like &nbsp;
+     We use a "strict" DTD to make IE follow the alignment rules. -->
+
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd">
+<body class="container">
+<h3>MultipleSubmits (1)</h3>
+
+The Submit component generates a submit button or, if you specified it, an image.<br/>
+This example shows how to respond to more than one Submit in a Form. It also demonstrates the <code>mode</code> parameter,
+which allows you to submit without client-side validation.<br/><br/>
+
+<div class="eg">
+    <t:form class="form-horizontal" t:id="search">
+        <div class="form-group">
+            <t:label for="name" class="col-sm-2"/>
+            <div class="col-sm-2">
+                <t:textfield t:id="name" validate="required, maxlength=10"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-10 col-sm-offset-2">
+                <t:submit value="Search Customers"/>
+                <t:submit t:id="suppliers" value="Search Suppliers" class="btn btn-default"/>
+                <t:submit t:id="cancel" value="Cancel" mode="cancel" class="btn btn-default"/>
+            </div>
+        </div>
+    </t:form>
+</div>
+
+If "Search Suppliers" is clicked, server-side the Form will notify the "suppliers" Submit component which will "bubble up" the SELECTED event.<br/>
+If "Cancel" is clicked, due to <code>mode="cancel"</code> it will bypass validation and submit with <code>SubmitMode.CANCEL</code>.
+Server-side the Form will "bubble up" the CANCELED event before notifying the "cancel" Submit component which will "bubble up" the SELECTED event.<br/><br/>
+
+The request from either button is an HTTP POST with a URL like this: <code>http://thehost/jumpstart/examples/input/submits1.search</code><br/><br/>
+
+References: <a href="http://tapestry.apache.org/5.4/apidocs/org/apache/tapestry5/corelib/components/Form.html">Form</a>,
+<a href="http://tapestry.apache.org/5.4/apidocs/org/apache/tapestry5/corelib/components/TextField.html">TextField</a>,
+<a href="http://tapestry.apache.org/5.4/apidocs/org/apache/tapestry5/corelib/components/Submit.html">Submit</a>,
+<a href="http://tapestry.apache.org/5.4/apidocs/org/apache/tapestry5/corelib/components/Errors.html">Errors</a>,
+<a href="http://wiki.apache.org/tapestry/Tapestry5HowToUseForms">How To Use Forms</a>,
+<a href="http://tapestry.apache.org/forms-and-validation.html">Forms and Validation</a>.<br/><br/>
+
+<t:pagelink page="Index">Home</t:pagelink><br/><br/>
+</body>
+</html>
